@@ -22,7 +22,7 @@ class Unbuffered(object):
         self.stream.write(data)
         self.stream.flush()
 
-    def __getattr__(self, attr):
+  
         return getattr(self.stream, attr)
 
 sys.stdout = Unbuffered(sys.stdout)
